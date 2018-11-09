@@ -1,0 +1,21 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# Type definitions
+flow-typed/npm
+
+# dependencies
+node_modules
+.yarn-cache
+
+# testing
+docs
+reports/**/*
+__benchmarks__/data.js
+deoptigate/**/*
+coverage/**/*
+
+# production
+temp
+dist
+
+!.eslintrc.js
