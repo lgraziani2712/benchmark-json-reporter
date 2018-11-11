@@ -5,6 +5,9 @@
   "main": "./src/index.js",
   "author": "Luciano Graziani <@lgraziani2712>",
   "license": "MIT",
+  "scripts": {
+    "lint:js": "eslint . --fix"
+  },
   "files": [
     "README.md",
     "LICENSE",
@@ -12,19 +15,21 @@
   ],
   "keywords": [
     "benchmark",
-    "benchmark.js",
-    "node",
+    "nodejs",
     "json",
     "reporter",
     "ci",
-    "continue integration"
+    "continuous-integration"
   ],
   "peerDependencies": {
     "benchmark": "^2.1.4"
   },
+  "dependencies": {
+    "systeminformation": "^3.47.0"
+  },
   "devDependencies": {
-    "@dimax-ar/eslint-config-dimax": "3.0.1",
-    "eslint": "5.8.0",
-    "prettier": "1.15.1"
+    "@dimax-ar/eslint-config-dimax": "^3.0.1",
+    "eslint": "^5.8.0",
+    "prettier": "^1.15.1"
   }
 }
