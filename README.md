@@ -48,11 +48,11 @@ jsonReporter(suite);
 
 suite
   .add('bench-name-1', () => {
-    // Heavy code
+    // Faster heavy process
   })
   // ...
   .add('bench-name-n', () => {
-    // Heavy code
+    // Slower heavy process
   })
   // run async
   .run({ async: true });
@@ -79,11 +79,11 @@ jsonReporter(suite, {
         // 3. Store the benchmarks
         Promise.all(
           benchs.map(bench =>
-            // For each benchmark, push the result to the collection
+            // For each benchmark, push the result into the collection
             connection
               .getById(hashId)
               .getProp('benchmarks')
-              .getCollection(bench.name).push(bench),
+              .getCollection(bench.timestamp).push(bench),
           )
         )
       ).then(() => {
@@ -96,11 +96,11 @@ jsonReporter(suite, {
 
 suite
   .add('bench-name-1', () => {
-    // Heavy code
+    // Faster heavy process
   })
   // ...
   .add('bench-name-n', () => {
-    // Heavy code
+    // Slower heavy process
   })
   // run async
   .run({ async: true });

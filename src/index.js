@@ -78,7 +78,7 @@ module.exports = function jsonReporter(suite, rawConfig) {
           .createHash('md5')
           .update(JSON.stringify(sysinfo))
           .digest('hex');
-
+        const timestamp = Date.now();
         const result = {
           sysinfo,
           benchmarks: benchmarks.map(bench => {
@@ -97,6 +97,7 @@ module.exports = function jsonReporter(suite, rawConfig) {
               samples: bench.stats.sample.length,
               deviation: bench.stats.rme.toFixed(2),
               ops: bench.hz.toFixed(bench.hz < 100 ? 2 : 0),
+              timestamp,
             };
           }),
         };
